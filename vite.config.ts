@@ -12,7 +12,7 @@ export default defineConfig({
       open: false,
       gzipSize: true,
       brotliSize: true,
-    }) as any,
+    }),
   ],
   build: {
     // Target modern browsers for better compatibility
