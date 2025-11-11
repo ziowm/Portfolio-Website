@@ -43,12 +43,19 @@ const iconMap = {
 
 function Skills({ skillCategories }: SkillsProps) {
   return (
-    <section id="skills" className="section-padding bg-white" aria-labelledby="skills-heading">
+    <section
+      id="skills"
+      className="section-padding bg-white"
+      aria-labelledby="skills-heading"
+    >
       <div className="container mx-auto container-padding">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-xl">
-            <h2 id="skills-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-md">
+            <h2
+              id="skills-heading"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-md"
+            >
               Skills & Technologies
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -71,9 +78,14 @@ function Skills({ skillCategories }: SkillsProps) {
                 </h3>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6" role="list" aria-label={`${category.name} skills`}>
-                  {category.skills.map((skill) => {
-                    const IconComponent = iconMap[skill.icon as keyof typeof iconMap];
+                <div
+                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+                  role="list"
+                  aria-label={`${category.name} skills`}
+                >
+                  {category.skills.map(skill => {
+                    const IconComponent =
+                      iconMap[skill.icon as keyof typeof iconMap];
                     return (
                       <div
                         key={skill.name}
@@ -82,8 +94,13 @@ function Skills({ skillCategories }: SkillsProps) {
                         aria-label={`${skill.name} skill`}
                       >
                         {/* Skill Icon */}
-                        <div className="mb-3 text-gray-700 group-hover:text-primary-600 transition-colors duration-300" aria-hidden="true">
-                          {IconComponent && <IconComponent className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />}
+                        <div
+                          className="mb-3 text-gray-700 group-hover:text-primary-600 transition-colors duration-300"
+                          aria-hidden="true"
+                        >
+                          {IconComponent && (
+                            <IconComponent className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
+                          )}
                         </div>
 
                         {/* Skill Name */}

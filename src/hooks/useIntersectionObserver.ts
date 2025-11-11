@@ -8,7 +8,7 @@ interface UseIntersectionObserverOptions extends IntersectionObserverInit {
 /**
  * Custom hook to detect when an element enters the viewport
  * Respects user's motion preferences (prefers-reduced-motion)
- * 
+ *
  * @param elementRef - React ref to the element to observe
  * @param options - IntersectionObserver options
  * @returns boolean indicating if element is visible
@@ -31,8 +31,10 @@ export function useIntersectionObserver(
     if (!element) return;
 
     // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     // If user prefers reduced motion, make element visible immediately
     if (prefersReducedMotion) {
       setIsVisible(true);
@@ -42,12 +44,12 @@ export function useIntersectionObserver(
     // If already visible and we should freeze, don't observe
     if (freezeOnceVisible && isVisible) return;
 
-    const observerCallback: IntersectionObserverCallback = (entries) => {
+    const observerCallback: IntersectionObserverCallback = entries => {
       const [entry] = entries;
-      
+
       if (entry.isIntersecting) {
         setIsVisible(true);
-        
+
         // If we should freeze once visible, disconnect observer
         if (freezeOnceVisible && observer) {
           observer.disconnect();

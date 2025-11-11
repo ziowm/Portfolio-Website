@@ -7,10 +7,17 @@ interface AboutProps {
 
 function About({ about }: AboutProps) {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-white section-padding" aria-labelledby="about-heading">
+    <section
+      id="about"
+      className="min-h-screen flex items-center justify-center bg-white section-padding"
+      aria-labelledby="about-heading"
+    >
       <div className="container mx-auto container-padding">
         <AnimatedSection animation="fade-in-up" threshold={0.2}>
-          <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-xl text-center">
+          <h2
+            id="about-heading"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-xl text-center"
+          >
             About Me
           </h2>
         </AnimatedSection>

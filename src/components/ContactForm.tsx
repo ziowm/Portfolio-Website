@@ -8,7 +8,12 @@ interface ContactFormProps {
   errorMessage?: string;
 }
 
-export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage }: ContactFormProps) {
+export function ContactForm({
+  onSubmit,
+  isSubmitting,
+  submitStatus,
+  errorMessage,
+}: ContactFormProps) {
   const {
     register,
     handleSubmit,
@@ -27,10 +32,18 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
   };
 
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="max-w-2xl mx-auto space-y-6" noValidate>
+    <form
+      onSubmit={handleSubmit(handleFormSubmit)}
+      className="max-w-2xl mx-auto space-y-6"
+      noValidate
+    >
       {/* Success Message */}
       {submitStatus === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg" role="alert" aria-live="polite">
+        <div
+          className="p-4 bg-green-50 border border-green-200 rounded-lg"
+          role="alert"
+          aria-live="polite"
+        >
           <div className="flex items-start">
             <svg
               className="w-5 h-5 text-green-600 mt-0.5 mr-3"
@@ -44,9 +57,12 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
               />
             </svg>
             <div>
-              <h3 className="text-sm font-medium text-green-800">Message sent successfully!</h3>
+              <h3 className="text-sm font-medium text-green-800">
+                Message sent successfully!
+              </h3>
               <p className="mt-1 text-sm text-green-700">
-                Thank you for reaching out. I'll get back to you as soon as possible.
+                Thank you for reaching out. I'll get back to you as soon as
+                possible.
               </p>
             </div>
           </div>
@@ -55,7 +71,11 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
 
       {/* Error Message */}
       {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg" role="alert" aria-live="assertive">
+        <div
+          className="p-4 bg-red-50 border border-red-200 rounded-lg"
+          role="alert"
+          aria-live="assertive"
+        >
           <div className="flex items-start">
             <svg
               className="w-5 h-5 text-red-600 mt-0.5 mr-3"
@@ -69,12 +89,21 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
               />
             </svg>
             <div>
-              <h3 className="text-sm font-medium text-red-800">Failed to send message</h3>
+              <h3 className="text-sm font-medium text-red-800">
+                Failed to send message
+              </h3>
               <p className="mt-1 text-sm text-red-700">
-                {errorMessage || 'Something went wrong. Please try again or contact me directly.'}
+                {errorMessage ||
+                  'Something went wrong. Please try again or contact me directly.'}
               </p>
               <p className="mt-2 text-sm text-red-700">
-                Alternative contact: <a href="mailto:your.email@example.com" className="underline font-medium">your.email@example.com</a>
+                Alternative contact:{' '}
+                <a
+                  href="mailto:your.email@example.com"
+                  className="underline font-medium"
+                >
+                  your.email@example.com
+                </a>
               </p>
             </div>
           </div>
@@ -82,7 +111,10 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
       )}
       {/* Name Field */}
       <div>
-        <label htmlFor="name" className="block text-sm sm:text-base font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="name"
+          className="block text-sm sm:text-base font-medium text-gray-700 mb-2"
+        >
           Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -104,13 +136,18 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
           aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">{errors.name.message}</p>
+          <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">
+            {errors.name.message}
+          </p>
         )}
       </div>
 
       {/* Email Field */}
       <div>
-        <label htmlFor="email" className="block text-sm sm:text-base font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="email"
+          className="block text-sm sm:text-base font-medium text-gray-700 mb-2"
+        >
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -132,13 +169,22 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
           aria-describedby={errors.email ? 'email-error' : undefined}
         />
         {errors.email && (
-          <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">{errors.email.message}</p>
+          <p
+            id="email-error"
+            className="mt-1 text-sm text-red-600"
+            role="alert"
+          >
+            {errors.email.message}
+          </p>
         )}
       </div>
 
       {/* Message Field */}
       <div>
-        <label htmlFor="message" className="block text-sm sm:text-base font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="message"
+          className="block text-sm sm:text-base font-medium text-gray-700 mb-2"
+        >
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -160,7 +206,13 @@ export function ContactForm({ onSubmit, isSubmitting, submitStatus, errorMessage
           aria-describedby={errors.message ? 'message-error' : undefined}
         />
         {errors.message && (
-          <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">{errors.message.message}</p>
+          <p
+            id="message-error"
+            className="mt-1 text-sm text-red-600"
+            role="alert"
+          >
+            {errors.message.message}
+          </p>
         )}
       </div>
 

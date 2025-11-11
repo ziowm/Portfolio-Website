@@ -47,8 +47,11 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
       >
         Skip to main content
       </a>
-      
-      <nav className="container mx-auto container-padding" aria-label="Main navigation">
+
+      <nav
+        className="container mx-auto container-padding"
+        aria-label="Main navigation"
+      >
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Brand */}
           <button
@@ -61,7 +64,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
@@ -106,7 +109,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}

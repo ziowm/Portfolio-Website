@@ -20,10 +20,14 @@ export const initEmailJS = () => {
  * @param formData - Contact form data containing name, email, and message
  * @returns Promise that resolves when email is sent successfully
  */
-export const sendContactEmail = async (formData: ContactFormData): Promise<void> => {
+export const sendContactEmail = async (
+  formData: ContactFormData
+): Promise<void> => {
   // Check if EmailJS is configured
   if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-    throw new Error('EmailJS is not configured. Please set up environment variables.');
+    throw new Error(
+      'EmailJS is not configured. Please set up environment variables.'
+    );
   }
 
   try {

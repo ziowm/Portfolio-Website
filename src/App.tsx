@@ -10,8 +10,12 @@ import './App.css';
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
 const Projects = lazy(() => import('./components/Projects'));
-const GitHub = lazy(() => import('./components/GitHub').then(module => ({ default: module.GitHub })));
-const Contact = lazy(() => import('./components/Contact').then(module => ({ default: module.Contact })));
+const GitHub = lazy(() =>
+  import('./components/GitHub').then(module => ({ default: module.GitHub }))
+);
+const Contact = lazy(() =>
+  import('./components/Contact').then(module => ({ default: module.Contact }))
+);
 const Footer = lazy(() => import('./components/Footer'));
 
 const sectionIds = ['hero', 'about', 'skills', 'projects', 'github', 'contact'];
@@ -36,7 +40,13 @@ function App() {
         />
 
         {/* Lazy loaded sections with loading fallback */}
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div></div>}>
+        <Suspense
+          fallback={
+            <div className="min-h-screen flex items-center justify-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            </div>
+          }
+        >
           {/* About Section */}
           <About about={portfolioData.about} />
 

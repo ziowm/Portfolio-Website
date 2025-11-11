@@ -19,7 +19,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function Contact({ contactInfo }: ContactProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
@@ -48,18 +50,26 @@ export function Contact({ contactInfo }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-white section-padding" aria-labelledby="contact-heading">
+    <section
+      id="contact"
+      className="min-h-screen flex items-center justify-center bg-white section-padding"
+      aria-labelledby="contact-heading"
+    >
       <div className="container mx-auto container-padding">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <AnimatedSection animation="fade-in-up" threshold={0.2}>
             <div className="text-center mb-xl">
-              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-gray-900 mb-md">
+              <h2
+                id="contact-heading"
+                className="text-4xl md:text-5xl font-bold text-gray-900 mb-md"
+              >
                 Get In Touch
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Have a project in mind or want to collaborate? Feel free to reach out through the
-                contact form below, or connect with me on social media.
+                Have a project in mind or want to collaborate? Feel free to
+                reach out through the contact form below, or connect with me on
+                social media.
               </p>
             </div>
           </AnimatedSection>
@@ -90,7 +100,10 @@ export function Contact({ contactInfo }: ContactProps) {
                   className="flex items-center gap-3 text-gray-700 hover:text-primary-600 transition-all duration-300 group"
                   aria-label={`Send email to ${contactInfo.email}`}
                 >
-                  <div className="p-3 bg-gray-100 rounded-full group-hover:bg-primary-100 transition-all duration-300" aria-hidden="true">
+                  <div
+                    className="p-3 bg-gray-100 rounded-full group-hover:bg-primary-100 transition-all duration-300"
+                    aria-hidden="true"
+                  >
                     <HiMail className="w-6 h-6" />
                   </div>
                   <span className="font-medium">{contactInfo.email}</span>
@@ -98,7 +111,7 @@ export function Contact({ contactInfo }: ContactProps) {
 
                 {/* Social Links */}
                 <div className="flex items-center gap-4">
-                  {contactInfo.socialLinks.map((link) => {
+                  {contactInfo.socialLinks.map(link => {
                     const Icon = iconMap[link.icon];
                     if (!Icon) return null;
 

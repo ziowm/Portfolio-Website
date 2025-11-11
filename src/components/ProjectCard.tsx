@@ -12,7 +12,10 @@ function ProjectCard({ project }: ProjectCardProps) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <article className="group bg-white rounded-xl shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden flex flex-col h-full card-hover" role="listitem">
+    <article
+      className="group bg-white rounded-xl shadow-soft hover:shadow-strong transition-all duration-300 overflow-hidden flex flex-col h-full card-hover"
+      role="listitem"
+    >
       {/* Project Thumbnail */}
       <div className="relative w-full h-48 sm:h-56 md:h-64 bg-gray-200 overflow-hidden">
         {!imageError ? (
@@ -21,7 +24,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             {!imageLoaded && (
               <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse" />
             )}
-            
+
             <img
               src={project.imageUrl}
               alt={`${project.title} project screenshot`}
@@ -38,7 +41,9 @@ function ProjectCard({ project }: ProjectCardProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
             <div className="text-center p-4">
               <div className="text-4xl mb-2">🚀</div>
-              <p className="text-sm text-gray-600 font-medium">{project.title}</p>
+              <p className="text-sm text-gray-600 font-medium">
+                {project.title}
+              </p>
             </div>
           </div>
         )}
@@ -62,7 +67,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         {/* Technologies */}
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
+            {project.technologies.map(tech => (
               <span
                 key={tech}
                 className="px-3 py-1 text-xs md:text-sm font-medium bg-primary-50 text-primary-700 rounded-full border border-primary-200 hover:bg-primary-100 transition-colors duration-200"
@@ -87,7 +92,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               <span>Live Demo</span>
             </a>
           )}
-          
+
           <a
             href={project.githubUrl}
             target="_blank"

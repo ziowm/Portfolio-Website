@@ -4,7 +4,8 @@ export const portfolioData: PortfolioData = {
   personal: {
     name: 'Moiz Uddin',
     title: 'Full Stack Developer & Software Engineer',
-    tagline: 'Crafting elegant solutions with modern web technologies and scalable architectures',
+    tagline:
+      'Crafting elegant solutions with modern web technologies and scalable architectures',
     avatarUrl: '/avatar.jpg',
     githubUsername: import.meta.env.VITE_GITHUB_USERNAME || 'ziowm',
   },
@@ -50,7 +51,14 @@ export const portfolioData: PortfolioData = {
       title: 'E-Commerce Platform',
       description:
         'A comprehensive full-stack e-commerce solution featuring advanced product management, secure payment processing with Stripe, real-time inventory tracking, and an intuitive admin dashboard. Built with performance and scalability in mind.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS', 'Redis'],
+      technologies: [
+        'React',
+        'Node.js',
+        'PostgreSQL',
+        'Stripe',
+        'Tailwind CSS',
+        'Redis',
+      ],
       imageUrl: '/projects/ecommerce.jpg',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/ziowm/ecommerce-platform',
@@ -61,7 +69,13 @@ export const portfolioData: PortfolioData = {
       title: 'Task Management App',
       description:
         'A collaborative project management platform with real-time synchronization, team workspaces, drag-and-drop task boards, and advanced filtering. Supports multiple projects with role-based access control and activity tracking.',
-      technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI', 'WebSocket'],
+      technologies: [
+        'React',
+        'TypeScript',
+        'Firebase',
+        'Material-UI',
+        'WebSocket',
+      ],
       imageUrl: '/projects/task-manager.jpg',
       liveUrl: 'https://example.com',
       githubUrl: 'https://github.com/ziowm/task-manager',
@@ -72,7 +86,13 @@ export const portfolioData: PortfolioData = {
       title: 'Weather Dashboard',
       description:
         'An interactive weather forecasting application featuring live weather data, 7-day forecasts, interactive maps with radar overlays, and detailed analytics. Includes location search, favorites, and weather alerts with beautiful data visualizations.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'Tailwind CSS', 'Mapbox'],
+      technologies: [
+        'React',
+        'OpenWeather API',
+        'Chart.js',
+        'Tailwind CSS',
+        'Mapbox',
+      ],
       imageUrl: '/projects/weather-dashboard.jpg',
       githubUrl: 'https://github.com/ziowm/weather-dashboard',
       featured: true,

@@ -14,7 +14,11 @@ export class GitHubAPIError extends Error {
   statusCode?: number;
   isRateLimit: boolean;
 
-  constructor(message: string, statusCode?: number, isRateLimit: boolean = false) {
+  constructor(
+    message: string,
+    statusCode?: number,
+    isRateLimit: boolean = false
+  ) {
     super(message);
     this.name = 'GitHubAPIError';
     this.statusCode = statusCode;
@@ -50,7 +54,8 @@ const handleGitHubError = (error: unknown): never => {
 
     // Rate limiting error
     if (statusCode === 403) {
-      const rateLimitRemaining = axiosError.response?.headers['x-ratelimit-remaining'];
+      const rateLimitRemaining =
+        axiosError.response?.headers['x-ratelimit-remaining'];
       if (rateLimitRemaining === '0') {
         throw new GitHubAPIError(
           'GitHub API rate limit exceeded. Please try again later.',
@@ -66,7 +71,10 @@ const handleGitHubError = (error: unknown): never => {
     }
 
     if (statusCode && statusCode >= 500) {
-      throw new GitHubAPIError('GitHub service is temporarily unavailable.', statusCode);
+      throw new GitHubAPIError(
+        'GitHub service is temporarily unavailable.',
+        statusCode
+      );
     }
 
     // Network errors
@@ -76,7 +84,9 @@ const handleGitHubError = (error: unknown): never => {
   }
 
   // Generic error
-  throw new GitHubAPIError('Failed to fetch GitHub data. Please try again later.');
+  throw new GitHubAPIError(
+    'Failed to fetch GitHub data. Please try again later.'
+  );
 };
 
 // Fetch GitHub user profile

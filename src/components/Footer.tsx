@@ -23,7 +23,7 @@ function Footer({ socialLinks, onBackToTop }: FooterProps) {
         <div className="max-w-6xl mx-auto">
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4 mb-lg">
-            {socialLinks.map((link) => {
+            {socialLinks.map(link => {
               const IconComponent = iconMap[link.icon as keyof typeof iconMap];
               return (
                 <a

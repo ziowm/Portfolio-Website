@@ -6,8 +6,13 @@ import { useState, useEffect } from 'react';
  * @param offset - Offset from top of viewport (default: 100px for header height)
  * @returns The ID of the currently active section
  */
-export function useScrollSpy(sectionIds: string[], offset: number = 100): string {
-  const [activeSection, setActiveSection] = useState<string>(sectionIds[0] || '');
+export function useScrollSpy(
+  sectionIds: string[],
+  offset: number = 100
+): string {
+  const [activeSection, setActiveSection] = useState<string>(
+    sectionIds[0] || ''
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +21,7 @@ export function useScrollSpy(sectionIds: string[], offset: number = 100): string
 
       // Find all sections and their positions
       const sectionPositions = sectionIds
-        .map((id) => {
+        .map(id => {
           const element = document.getElementById(id);
           if (!element) return null;
 
@@ -30,7 +35,9 @@ export function useScrollSpy(sectionIds: string[], offset: number = 100): string
             bottom,
           };
         })
-        .filter((section): section is NonNullable<typeof section> => section !== null);
+        .filter(
+          (section): section is NonNullable<typeof section> => section !== null
+        );
 
       // Find the section that's currently in view
       // Priority: section that contains the scroll position

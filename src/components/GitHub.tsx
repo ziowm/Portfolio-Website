@@ -13,15 +13,26 @@ export const GitHub = ({ username }: GitHubProps) => {
   // Loading state
   if (isLoading) {
     return (
-      <section id="github" className="py-20 bg-gray-50 dark:bg-gray-900" aria-label="GitHub repositories">
+      <section
+        id="github"
+        className="py-20 bg-gray-50 dark:bg-gray-900"
+        aria-label="GitHub repositories"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               GitHub Repositories
             </h2>
           </div>
-          <div className="flex justify-center items-center py-12" role="status" aria-live="polite">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" aria-hidden="true"></div>
+          <div
+            className="flex justify-center items-center py-12"
+            role="status"
+            aria-live="polite"
+          >
+            <div
+              className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
+              aria-hidden="true"
+            ></div>
             <span className="sr-only">Loading GitHub repositories...</span>
           </div>
         </div>
@@ -38,7 +49,11 @@ export const GitHub = ({ username }: GitHubProps) => {
         : 'Unable to fetch data from GitHub. Please try again later.';
 
     return (
-      <section id="github" className="py-20 bg-gray-50 dark:bg-gray-900" aria-label="GitHub repositories">
+      <section
+        id="github"
+        className="py-20 bg-gray-50 dark:bg-gray-900"
+        aria-label="GitHub repositories"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -63,9 +78,13 @@ export const GitHub = ({ username }: GitHubProps) => {
                 )}
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {isRateLimit ? 'Rate Limit Reached' : 'Unable to load GitHub repositories'}
+                    {isRateLimit
+                      ? 'Rate Limit Reached'
+                      : 'Unable to load GitHub repositories'}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{errorMessage}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {errorMessage}
+                  </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href={`https://github.com/${username}`}
@@ -100,17 +119,25 @@ export const GitHub = ({ username }: GitHubProps) => {
     .slice(0, 6);
 
   return (
-    <section id="github" className="section-padding bg-gray-50 dark:bg-gray-900" aria-labelledby="github-heading">
+    <section
+      id="github"
+      className="section-padding bg-gray-50 dark:bg-gray-900"
+      aria-labelledby="github-heading"
+    >
       <div className="container mx-auto container-padding">
         {/* Section header */}
         <AnimatedSection animation="fade-in-up" threshold={0.2}>
           <div className="text-center mb-xl">
-            <h2 id="github-heading" className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-md">
+            <h2
+              id="github-heading"
+              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-md"
+            >
               GitHub Repositories
             </h2>
             {profile && (
               <p className="text-gray-600 dark:text-gray-300 text-lg">
-                {profile.publicRepos} public repositories • {profile.followers} followers
+                {profile.publicRepos} public repositories • {profile.followers}{' '}
+                followers
               </p>
             )}
           </div>
@@ -118,7 +145,11 @@ export const GitHub = ({ username }: GitHubProps) => {
 
         {/* Repository grid */}
         {featuredRepos.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto" role="list" aria-label="Featured GitHub repositories">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            role="list"
+            aria-label="Featured GitHub repositories"
+          >
             {featuredRepos.map((repo, index) => (
               <AnimatedSection
                 key={repo.id}
@@ -132,7 +163,9 @@ export const GitHub = ({ username }: GitHubProps) => {
           </div>
         ) : (
           <div className="text-center py-xl">
-            <p className="text-gray-600 dark:text-gray-300">No repositories found.</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              No repositories found.
+            </p>
           </div>
         )}
 

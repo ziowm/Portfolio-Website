@@ -3,7 +3,10 @@
  * @param sectionId - The ID of the section to scroll to
  * @param offset - Offset from top (default: 80px for header height)
  */
-export function smoothScrollToSection(sectionId: string, offset: number = 80): void {
+export function smoothScrollToSection(
+  sectionId: string,
+  offset: number = 80
+): void {
   const element = document.getElementById(sectionId);
 
   if (!element) {

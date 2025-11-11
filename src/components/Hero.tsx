@@ -38,7 +38,11 @@ function Hero({ personal, socialLinks, onNavigate }: HeroProps) {
                   decoding="async"
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white" aria-hidden="true" title="Available for work"></div>
+              <div
+                className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"
+                aria-hidden="true"
+                title="Available for work"
+              ></div>
             </div>
           </div>
 
@@ -58,8 +62,11 @@ function Hero({ personal, socialLinks, onNavigate }: HeroProps) {
           </p>
 
           {/* Social Links */}
-          <nav aria-label="Social media links" className="flex items-center justify-center gap-4 mb-10 animate-slide-up animation-delay-300">
-            {socialLinks.map((link) => {
+          <nav
+            aria-label="Social media links"
+            className="flex items-center justify-center gap-4 mb-10 animate-slide-up animation-delay-300"
+          >
+            {socialLinks.map(link => {
               const IconComponent = iconMap[link.icon as keyof typeof iconMap];
               return (
                 <a
@@ -70,7 +77,9 @@ function Hero({ personal, socialLinks, onNavigate }: HeroProps) {
                   className="w-12 h-12 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-white text-gray-700 hover:text-blue-600 hover:bg-blue-50 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110"
                   aria-label={`Visit ${link.platform} profile`}
                 >
-                  {IconComponent && <IconComponent className="w-6 h-6" aria-hidden="true" />}
+                  {IconComponent && (
+                    <IconComponent className="w-6 h-6" aria-hidden="true" />
+                  )}
                 </a>
               );
             })}
