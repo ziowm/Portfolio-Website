@@ -121,24 +121,28 @@ export const GitHub = ({ username }: GitHubProps) => {
   return (
     <section
       id="github"
-      className="section-padding bg-gray-50 dark:bg-gray-900"
+      className="py-20 bg-white"
       aria-labelledby="github-heading"
     >
-      <div className="container mx-auto container-padding">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <AnimatedSection animation="fade-in-up" threshold={0.2}>
-          <div className="text-center mb-xl">
+          <div className="text-center mb-16">
             <h2
               id="github-heading"
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-md"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
             >
               GitHub Repositories
             </h2>
             {profile && (
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                {profile.publicRepos} public repositories • {profile.followers}{' '}
-                followers
-              </p>
+              <div className="flex items-center justify-center gap-6 text-gray-600">
+                <div className="flex items-center gap-2">
+                  <FaGithub className="text-gray-700 text-xl" />
+                  <span className="text-lg font-medium">{profile.publicRepos} repositories</span>
+                </div>
+                <span className="text-gray-400">•</span>
+                <span className="text-lg font-medium">{profile.followers} followers</span>
+              </div>
             )}
           </div>
         </AnimatedSection>
@@ -146,7 +150,7 @@ export const GitHub = ({ username }: GitHubProps) => {
         {/* Repository grid */}
         {featuredRepos.length > 0 ? (
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
             role="list"
             aria-label="Featured GitHub repositories"
           >
@@ -162,8 +166,8 @@ export const GitHub = ({ username }: GitHubProps) => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-xl">
-            <p className="text-gray-600 dark:text-gray-300">
+          <div className="text-center py-12">
+            <p className="text-gray-600 text-lg">
               No repositories found.
             </p>
           </div>
@@ -171,14 +175,14 @@ export const GitHub = ({ username }: GitHubProps) => {
 
         {/* View more link */}
         <AnimatedSection animation="fade-in-up" delay={200} threshold={0.2}>
-          <div className="text-center mt-xl">
+          <div className="text-center mt-12">
             <a
               href={`https://github.com/${username}?tab=repositories`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-dark-900 dark:bg-white text-white dark:text-dark-900 rounded-lg hover:bg-dark-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium shadow-soft hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
-              <FaGithub />
+              <FaGithub className="text-xl" />
               View all repositories on GitHub
             </a>
           </div>
