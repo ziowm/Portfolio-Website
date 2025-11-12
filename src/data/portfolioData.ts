@@ -3,7 +3,7 @@ import type { PortfolioData } from '../types';
 export const portfolioData: PortfolioData = {
   personal: {
     name: 'Moiz Uddin',
-    title: 'Full Stack Developer & Software Engineer',
+    title: 'Software Engineer and Problem Solver',
     tagline:
       'Crafting elegant solutions with modern web technologies and scalable architectures',
     avatarUrl: '/avatar.jpg',
@@ -108,13 +108,8 @@ export const portfolioData: PortfolioData = {
       },
       {
         platform: 'LinkedIn',
-        url: 'https://linkedin.com/in/moizuddin',
+        url: 'https://linkedin.com/in/ziowm',
         icon: 'SiLinkedin',
-      },
-      {
-        platform: 'Twitter',
-        url: 'https://twitter.com/moizuddin',
-        icon: 'SiTwitter',
       },
     ],
   },
