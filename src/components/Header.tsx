@@ -56,22 +56,22 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           {/* Logo/Brand */}
           <button
             onClick={() => handleNavClick('hero')}
-            className="text-xl md:text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors duration-300"
+            className="text-xl md:text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300"
             aria-label="Go to home"
           >
             Portfolio
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <div className="hidden md:flex items-center gap-2 lg:gap-4">
             {navItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-300 ${
+                className={`px-4 lg:px-6 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-300 ${
                   activeSection === item.id
-                    ? 'bg-primary-600 text-white shadow-soft'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-primary-600'
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'
                 }`}
                 aria-current={activeSection === item.id ? 'page' : undefined}
               >
@@ -83,7 +83,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-600 min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300"
+            className="md:hidden p-3 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-600 min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -115,8 +115,8 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                   onClick={() => handleNavClick(item.id)}
                   className={`px-4 py-3 rounded-lg text-left text-base font-medium transition-all duration-300 min-h-[44px] ${
                     activeSection === item.id
-                      ? 'bg-primary-600 text-white shadow-soft'
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-primary-600'
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'
                   }`}
                   aria-current={activeSection === item.id ? 'page' : undefined}
                 >
